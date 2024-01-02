@@ -1,5 +1,8 @@
 # Visual Matrix
 # Author: VolodyaHoi
+# Version: 0.3
+
+from multipledispatch import dispatch
 
 class VisualMatrix():
 
@@ -8,6 +11,7 @@ class VisualMatrix():
     current_length = -1
     current_max = -1
     no_header = True
+    matrix = []
 
     @staticmethod
     def addHeader(header):
@@ -19,6 +23,29 @@ class VisualMatrix():
     @staticmethod
     def addRow(row):
         VisualMatrix.table.append(row)
+
+    @dispatch(list, list)
+    def setMatrix(user_matrix, header):
+        
+        if VisualMatrix.no_header == True:
+            for i in range(0, len(user_matrix)):
+                VisualMatrix.matrix.append(user_matrix[i])
+            VisualMatrix.matrix.insert(0, header)
+            VisualMatrix.table = VisualMatrix.matrix
+            VisualMatrix.no_header = False
+    
+    @dispatch(list)
+    def setMatrix(user_matrix):
+        VisualMatrix.table = user_matrix
+
+    @staticmethod
+    def clear():
+        VisualMatrix.table = [] 
+        VisualMatrix.length = []
+        VisualMatrix.current_length = -1
+        VisualMatrix.current_max = -1
+        VisualMatrix.no_header = True
+        VisualMatrix.matrix = []
 
     @staticmethod
     def myMatrix():
@@ -97,5 +124,6 @@ class VisualMatrix():
                 print("+-" + "-" * VisualMatrix.current_max + "-", end="")
                 
             print("+")
-        except:
+            VisualMatrix.clear()
+        except:            
             print("Module [Visual Matrix] send error! Check your code on errors.")
