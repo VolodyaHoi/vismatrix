@@ -89,6 +89,12 @@ Creates a matrix or table (Depending on whether a header is specified or not).
 
 Output table or matrix. **Must be written at the end of creating a matrix or table**
 
+## Requirements:
+
+```bash
+
+```
+
 ## Install:
 
 ```bash
