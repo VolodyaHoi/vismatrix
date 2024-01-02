@@ -1,6 +1,7 @@
 # Visual Matrix
 # Author: VolodyaHoi
-# Version: 0.3
+# Version: 0.4
+# Check README.md !
 
 from multipledispatch import dispatch
 
