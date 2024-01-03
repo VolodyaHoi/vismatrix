@@ -12,6 +12,10 @@ Visual Matrix - module for python, allowing you to display matrices or tables in
 
 >Table visual
 
+<img src="https://sun9-46.userapi.com/impg/ecfuTnvTRIGqnguk_FdxRGdJYRWPUOMAqe3DdA/pDpnUwACbCw.jpg?size=199x153&quality=96&sign=4291f3bdaf0154f4b470fbfedbfc1a3c&type=album" alt="si5"/>
+
+>Table visual (with border) 
+
 <img src="https://sun9-49.userapi.com/impg/0N59CEwlpFneyIFmnLkTUlXXlhyjXTaCyIIodA/9ZGEdYVwY1s.jpg?size=286x118&quality=96&sign=63552c7f9da7b9f2757aeeaaef78f292&type=album" alt="si5"/>
 
 >Matrix visual
@@ -29,7 +33,8 @@ m = [["Alexandra", "18", "Female"],
 
 matrix = VisualMatrix() # initialization
 
-matrix.setMatrix(m, header) # method in which you can immediately initialize a matrix with header
+matrix.setMatrix(m, header, True) # method in which you can immediately initialize a matrix with header 
+                                   # and without borders
 matrix.myMatrix()
 
 matrix.setMatrix(m) # method in which you can immediately initialize a matrix without header
@@ -43,7 +48,7 @@ from vismatrix import VisualMatrix
 
 matrix = VisualMatrix() # initialization
 
-# second way
+# second way (in this way you cant change no_border parameter)
 matrix.addHeader(["Name", "Age", "Sex"])
 matrix.addRow(["Alexandra", "18", "Female"])
 matrix.addRow(["Igor", "21", "Male"])
@@ -58,7 +63,7 @@ matrix.myMatrix()
 
 >Second way
 
-The output from both methods will be the same. You can immediately assign lists to methods (as in the first method with header)
+-The output from both methods will be the same. You can immediately assign lists to methods (as in the first method with header)
 
 #### addHeader(header)
 
@@ -76,7 +81,7 @@ Adds a row table/matrix.
 | :-------- | :------- | :-------------------------------- |
 | `row`      | `list` | Matrix or table row |
 
-#### setMatrix(user_matrix, header)
+#### setMatrix(user_matrix, header, no_border)
 
 Creates a matrix or table (Depending on whether a header is specified or not).
 
@@ -84,16 +89,11 @@ Creates a matrix or table (Depending on whether a header is specified or not).
 | :-------- | :------- | :-------------------------------- |
 | `user_matrix`      | `list` | Matrix or table`s data |
 | `header`      | `list` | Table`s header |
+| `no_border`      | `bool` | Use borders (True - No, False - Yes) |
 
 #### myMatrix()
 
 Output table or matrix. **Must be written at the end of creating a matrix or table**
-
-## Requirements:
-
-```bash
-multipledispatch
-```
 
 ## Install:
 
