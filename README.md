@@ -1,6 +1,6 @@
 # Visual Matrix
 
-<img src="https://img.shields.io/badge/vismatrix-0.5-green"/><img src="https://img.shields.io/badge/python-3.7+-blue"/>
+<img src="https://img.shields.io/badge/vismatrix-0.5-violet"/> <img src="https://img.shields.io/badge/python-3.7+-blue"/>
 
 ## About:
 
